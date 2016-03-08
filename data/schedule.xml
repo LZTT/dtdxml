@@ -14,13 +14,19 @@ and open the template in the editor.
         <time_of_day>
             <class_time time="12:30"/>
             <the_course number="ACIT4850" />
+            <the_course instructor="Jim" />
+            <the_course room="SW3" />
         </time_of_day>
     </days>
     <times>
+        <book_time>
             
     </times>
     <courses>
+        <book_course number="ACIT4850" />
+        <time_block>
             
+        </time_block>
     </courses>
 </schedule>
 
