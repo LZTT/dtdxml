@@ -29,9 +29,12 @@ and open the template in the editor.
 <!ATTLIST class_time
     time (8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30|16:30) #REQUIRED>
 
-<!ELEMENT the_course (#PCDATA)>
+<!ELEMENT the_course (EMPTY)>
 <!ATTLIST the_course 
-        number (ACIT4660|ACIT4850) #REQUIRED>
+        number (ACIT4660|ACIT4850) #IMPLIED
+        instructor (Jim|Medhat|Steve|Bethany) #IMPLIED
+        room (SW12-306|SE6-205|SW3) #IMPLIED
+>
 
 <!-- booking by time-->
 <!ELEMENT times (book_time,day_of_week)>
@@ -40,9 +43,33 @@ and open the template in the editor.
 <!ATTLIST book_time 
     time (8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30|16:30) #REQUIRED>
 
+<!ELEMENT day_of_week (week_day,course)>
+<!ELEMENT week_day (#PCDATA)>
+<!ATTLIST week_day 
+    day (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED>
+
+<!ELEMENT course (EMPTY)>
+<!ATTLIST course 
+        number (ACIT4660|ACIT4850) #IMPLIED
+        instructor (Jim|Medhat|Steve|Bethany) #IMPLIED
+        room (SW12-306|SE6-205|SW3) #IMPLIED
+>
+
 <!-- booking by course-->
-<!ELEMENT times (book_course,time_block)>
+<!ELEMENT courses (book_course,time_block)>
 
 <!ELEMENT book_course (#PCDATA)>
 <!ATTLIST book_course 
         number (ACIT4660|ACIT4850) #REQUIRED>
+
+<!ELEMENT time_block (this_week,blocks)>
+<!ELEMENT this_week (#PCDATA)>
+<!ATTLIST this_week 
+    day (Monday|Tuesday|Wednesday|Thursday|Friday) #REQUIRED>
+
+<!ELEMENT blocks (EMPTY)>
+<!ATTLIST blocks 
+    time (8:30|9:30|10:30|11:30|12:30|13:30|14:30|15:30|16:30) #IMPLIED
+        instructor (Jim|Medhat|Steve|Bethany) #IMPLIED
+        room (SW12-306|SE6-205|SW3) #IMPLIED
+>
