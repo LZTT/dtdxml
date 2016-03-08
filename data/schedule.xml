@@ -14,13 +14,17 @@ and open the template in the editor.
         <time_of_day>
             <class_time time="12:30"/>
             <the_course number="ACIT4850" />
+            <the_course instructor="Jim" />
+            <the_course room="SW3-1750" />
         </time_of_day>
     </days>
-    <times>
+     <times>
          <book_time time="13:30"/>
          <day_of_week>
-             <week_day day="Friday"/>
-             <course number="ACIT4660"/>
+            <week_day day="Friday"/>
+            <course number="ACIT4660" />
+            <course instructor="Steve" />
+            <course room="SW12-306" />
          </day_of_week>
     </times>
     <courses>
@@ -28,6 +32,8 @@ and open the template in the editor.
         <time_block>
             <this_week day="Monday"/>
             <blocks time="15:30"/>
+            <blocks instructor="Richard" />
+            <blocks room="SW9-206" />
         </time_block>
     </courses>
 </schedule>
