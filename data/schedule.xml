@@ -9,32 +9,49 @@ and open the template in the editor.
 
 
 <schedule>
-    <days>
-        <book_day day="Wednesday"/>
+    <by_day>
+        <book_day day="Wednesday">
         <time_of_day>
             <class_time time="12:30"/>
-            <the_course number="ACIT4850" />
-            <the_course instructor="Jim" />
-            <the_course room="SW3-1750" />
+            <the_course number="ACIT4850" instructor="Jim" room="SW3-1750" />
         </time_of_day>
-    </days>
-     <times>
-         <book_time time="13:30"/>
+        <time_of_day>
+            <class_time time="13:30"/>
+            <the_course number="ACIT4850" instructor="Jim" room="SW3-1750" />
+        </time_of_day>
+        </book_day>
+    </by_day>
+     <by_time>
+         <book_time time="8:30">
+         <day_of_week>
+             <week_day day="Tuesday"/>
+            <course number="ACIT4620" instructor="Bethany" room="SE12-306" />
+         </day_of_week>
          <day_of_week>
             <week_day day="Friday"/>
-            <course number="ACIT4660" />
-            <course instructor="Steve" />
-            <course room="SW12-306" />
+            <course number="ACIT4660" instructor="Steve" room="SW9-206" />
          </day_of_week>
-    </times>
-    <courses>
-        <book_course number="ACIT4910"/>
+         </book_time>
+    </by_time>
+    <by_course>
+        <book_course number="ACIT4910">
         <time_block>
             <this_week day="Monday"/>
-            <blocks time="15:30"/>
-            <blocks instructor="Richard" />
-            <blocks room="SW9-206" />
+            <blocks time="15:30" instructor="Richard" room="SW9-206"/>
         </time_block>
-    </courses>
+        <time_block>
+            <this_week day="Thursday"/>
+            <blocks time="9:30" instructor="Richard" room="SW5-1840"/>
+        </time_block>
+        <time_block>
+            <this_week day="Thursday"/>
+            <blocks time="10:30" instructor="Richard" room="SE12-306"/>
+        </time_block>
+        <time_block>
+            <this_week day="Thursday"/>
+            <blocks time="11:30" instructor="Richard" room="SE12-306"/>
+        </time_block>
+        </book_course>
+    </by_course>
 </schedule>
 
