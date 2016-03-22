@@ -27,7 +27,7 @@ class Timetable extends CI_Model{
         if ($filename == null){
             return;
         }
-        
+        //generating view for each facet
         $this->xml = simplexml_load_file(DATAPATH. 'schedule.xml');
         $this->facetDay();
         $this->facetTime();
@@ -49,9 +49,11 @@ class Timetable extends CI_Model{
 //        }
         foreach($this->xml->by_day->book_day as $book){
             foreach($book->time_of_day as $content){
+                //creating each item for the view
                 $time = $content->class_time;
                 $course = $content->the_course;
                 $detail = $content->detail;
+                //putting content to booking
                 $this->by_day[] = new Booking($detail,$book,$time,$course);
             }
             
@@ -72,9 +74,11 @@ class Timetable extends CI_Model{
 //        }
         foreach($this->xml->by_time->book_time as $book){
             foreach($book->day_of_week as $content){
+                //creating each item for the view
                 $course = $content->course;
                 $day = $content->week_day;
                 $detail  = $content->detail; 
+                //putting content to booking
                 $this->by_time[] = new Booking($detail,$day,$book,$course);
             }
             
@@ -95,15 +99,18 @@ class Timetable extends CI_Model{
 //        }
         foreach($this->xml->by_course->book_course as $book){
             foreach($book->time_block as $content){
+                //creating each item for the view
                 $day = $content->this_week;
                 $time = $content->blocks;
                 $detail  = $content->detail;
+                //putting content to booking
                 $this->by_course[] = new Booking($detail,$day,$time,$book);
             }
             
         }
     }
     
+    // set of getters for each item
     function byDay(){
         return $this->by_day;
     }

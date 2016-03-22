@@ -24,7 +24,7 @@ class Welcome extends Application{
 	}
         
         function index() {
-        // Build a list of orders
+        // Build a list of items,not used in our case
         $this->load->helper('directory');
         $candidates = directory_map(DATAPATH);
         sort($candidates);
@@ -37,13 +37,13 @@ class Welcome extends Application{
         }
         $this->data['orders'] = $orders;
 
-        // Present the list to choose from
+        // Present the home page
         $this->data['pagebody'] = 'homepage';
         $this->render();
     }
     
     function aDay($filename) {
-        // Build a receipt for the chosen order
+        // Build a receipt for the day facet
         $slot = new Timetable($filename);
         $this->data['filename'] = $filename;
         
@@ -58,7 +58,7 @@ class Welcome extends Application{
     }
     
     function aTime($filename) {
-        // Build a receipt for the chosen order
+        // Build a receipt for the time facet
         $slot = new Timetable($filename);
         $this->data['filename'] = $filename;
         
@@ -73,7 +73,7 @@ class Welcome extends Application{
     }
     
     function aCourse($filename) {
-        // Build a receipt for the chosen order
+        // Build a receipt for the course facet
         $slot = new Timetable($filename);
         $this->data['filename'] = $filename;
         
