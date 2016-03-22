@@ -1,3 +1,27 @@
+# winter2016-Lab8
+
+## Authors: 
+
+
+- Rin Zhu, A00887550
+- Tanja Tong, A00907319
+
+***********
+Conventions
+***********
+
+Allman style  
+
+tab indentation  
+
+ucfirst (Upper case first) for classes and files  
+
+lowercase for name elsewhere  
+
+words separated by underscore  
+
+underscore first for internal items  
+
 ###################
 What is CodeIgniter
 ###################
